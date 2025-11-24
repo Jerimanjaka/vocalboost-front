@@ -8,7 +8,7 @@
 
   <div class="app-container">
     <!-- HEADER -->
-    <header class="header glass-header">
+    <header class="header glass-header reveal">
       <div class="logo-container">
         <div class="logo-pulse">
           <svg width="46" height="46" viewBox="0 0 50 50" class="logo-icon">
@@ -24,8 +24,8 @@
           </svg>
         </div>
         <div class="brand">
-          <h1 class="brand-title">VocalBoost</h1>
-          <p class="brand-subtitle">AI-Powered Audio Enhancement</p>
+          <h1 class="brand-title">Vocal Boost</h1>
+          <p class="brand-subtitle">Let your voice bloom.</p>
         </div>
       </div>
 
@@ -49,20 +49,19 @@
     <main class="main-layout">
       <!-- HERO + RECORDER -->
       <section class="hero">
-        <div class="hero-left">
+        <div class="hero-left reveal delay-1">
           <div class="badge-row">
             <span class="pill-badge pill-new">🔥 Nouveau</span>
             <span class="pill-badge">Pour créateurs, podcasteurs & gamers</span>
           </div>
 
           <h2 class="hero-title">
-            Upgrade ta voix.<br/>
-            <span>Enregistre, booste, partage.</span>
+            Boost ta voix. Plus clair. Plus fort. Plus pro<br/>
+            <span>Enregistre. Améliore. Impressionne.</span>
           </h2>
 
           <p class="hero-subtitle">
-            Une interface pensée pour les créateurs Gen-Z : rapide, fluide, 
-            avec un design qui donne envie de rester.
+            Un studio audio nouvelle génération : simple, rapide et boosté à l’IA.
           </p>
 
           <div class="hero-stats">
@@ -81,56 +80,53 @@
           </div>
         </div>
 
-        <div class="hero-right">
-          <div class="recorder-shell glass-card">
+        <div class="hero-right reveal delay-2">
+          <div class="recorder-shell glass-card parallax-card">
             <div class="recorder-shell-header">
               <span class="chip chip-live">● Live Session</span>
               <span class="chip chip-mode">Mode: Studio</span>
             </div>
 
             <div class="recorder-card">
-              <app-recorder-controls />
+              <app-recorder-controls></app-recorder-controls>
             </div>
 
             <div class="recorder-footer-hint">
-              Astuce : branche ton micro et clique sur 🎙️ pour commencer.
+              Conseil : branche ton micro et appuie sur 🎙 pour enregistrer.
             </div>
           </div>
         </div>
       </section>
 
       <!-- CARTE SPONSORISÉE (PUB PREMIUM) -->
-      <section class="sponsored-card glass-card">
+      <section class="sponsored-card glass-card reveal delay-3">
         <div class="sponsored-header">
-          <span class="sponsored-dot">✨</span>
-          <span class="sponsored-title">Sponsorisé pour vous</span>
+            <span class="sponsored-dot">✨</span>
+            <span class="sponsored-title">Sponsorisé pour vous</span>
         </div>
 
         <div class="sponsored-content">
-          <div class="sponsored-text">
+            <div class="sponsored-text">
             <h4 class="sponsored-main">
-              📣 Astuce Voix : Deviens plus clair & professionnel
+                📣 Boost Astuce : Son plus propre, voix plus pro.
             </h4>
             <p class="sponsored-description">
-              Découvre cette méthode utilisée par les créateurs modernes pour améliorer leur voix
-              en moins de 30 secondes, sans matériel cher.
+                La méthode utilisée par les créateurs pour rendre leur voix plus nette en 30 secondes — sans micro pro, sans galère.
             </p>
             <button class="sponsored-btn">
-              Découvrir →
+                Découvrir →
             </button>
-          </div>
+            </div>
 
-          <div class="sponsored-image">
-            <img
-              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80"
-              alt="Voice technique"
-            />
-          </div>
+            <div class="sponsored-image portrait-neon">
+            <img src="jeune.png" alt="Voice technique" />
+            </div>
         </div>
-      </section>
+        </section>
+
 
       <!-- FEATURES -->
-      <section class="features-section">
+      <section class="features-section reveal delay-4">
         <h3 class="section-title">Pourquoi les créateurs adorent VocalBoost</h3>
 
         <div class="features-grid">
@@ -178,6 +174,12 @@
       <button class="sticky-ad-close" onclick="this.parentElement.remove()">
         ✕
       </button>
+    </div>
+
+    <!-- TOAST GLOBAL -->
+    <div id="global-toast" class="toast toast-hidden">
+      <span class="toast-icon">ℹ️</span>
+      <span class="toast-text">Message</span>
     </div>
   </div>
 </div>

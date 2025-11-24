@@ -1,5 +1,4 @@
 <div class="recorder-wrapper">
-
   <!-- Durée avec effet néon -->
   <div class="timer">
     {{ formatDuration(recorderService.state().duration) }}
@@ -12,33 +11,45 @@
 
   <!-- Buttons -->
   <div class="controls">
-    
     <!-- START -->
-    <button class="circle-btn record" *ngIf="!recorderService.state().isRecording" (click)="start()">
+    <button
+      class="circle-btn record mic-pulse"
+      *ngIf="!recorderService.state().isRecording"
+      (click)="start()">
       🎙️
     </button>
 
     <!-- PAUSE -->
-    <button class="circle-btn pause" *ngIf="recorderService.state().isRecording && !recorderService.state().isPaused" (click)="pause()">
+    <button
+      class="circle-btn pause"
+      *ngIf="recorderService.state().isRecording && !recorderService.state().isPaused"
+      (click)="pause()">
       ⏸️
     </button>
 
     <!-- RESUME -->
-    <button class="circle-btn resume" *ngIf="recorderService.state().isPaused" (click)="resume()">
+    <button
+      class="circle-btn resume"
+      *ngIf="recorderService.state().isPaused"
+      (click)="resume()">
       ▶️
     </button>
 
     <!-- STOP -->
-    <button class="circle-btn stop" *ngIf="recorderService.state().isRecording" (click)="stop()">
+    <button
+      class="circle-btn stop"
+      *ngIf="recorderService.state().isRecording"
+      (click)="stop()">
       ⏹️
     </button>
   </div>
 
-
   <!-- Upload / Download -->
   <div class="actions" *ngIf="recorderService.state().audioBlob">
-    
-    <button class="action-btn upload" (click)="upload()" [disabled]="uploadStatus === 'uploading'">
+    <button
+      class="action-btn upload"
+      (click)="upload()"
+      [disabled]="uploadStatus === 'uploading'">
       ☁️ {{ uploadStatus === 'uploading' ? 'Upload...' : 'Envoyer' }}
     </button>
 
@@ -47,8 +58,11 @@
     </button>
   </div>
 
-  <div class="upload-message" *ngIf="uploadMessage" [class.success]="uploadStatus==='success'" [class.error]="uploadStatus==='error'">
+  <div
+    class="upload-message"
+    *ngIf="uploadMessage"
+    [class.success]="uploadStatus==='success'"
+    [class.error]="uploadStatus==='error'">
     {{ uploadMessage }}
   </div>
-
 </div>
