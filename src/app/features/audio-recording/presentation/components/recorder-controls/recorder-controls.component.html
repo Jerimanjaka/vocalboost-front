@@ -1,0 +1,54 @@
+<div class="recorder-wrapper">
+
+  <!-- Durée avec effet néon -->
+  <div class="timer">
+    {{ formatDuration(recorderService.state().duration) }}
+  </div>
+
+  <!-- Animation waveform -->
+  <div class="waveform" *ngIf="recorderService.state().isRecording">
+    <div class="bar" *ngFor="let b of [1,2,3,4,5,6,7,8]"></div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="controls">
+    
+    <!-- START -->
+    <button class="circle-btn record" *ngIf="!recorderService.state().isRecording" (click)="start()">
+      🎙️
+    </button>
+
+    <!-- PAUSE -->
+    <button class="circle-btn pause" *ngIf="recorderService.state().isRecording && !recorderService.state().isPaused" (click)="pause()">
+      ⏸️
+    </button>
+
+    <!-- RESUME -->
+    <button class="circle-btn resume" *ngIf="recorderService.state().isPaused" (click)="resume()">
+      ▶️
+    </button>
+
+    <!-- STOP -->
+    <button class="circle-btn stop" *ngIf="recorderService.state().isRecording" (click)="stop()">
+      ⏹️
+    </button>
+  </div>
+
+
+  <!-- Upload / Download -->
+  <div class="actions" *ngIf="recorderService.state().audioBlob">
+    
+    <button class="action-btn upload" (click)="upload()" [disabled]="uploadStatus === 'uploading'">
+      ☁️ {{ uploadStatus === 'uploading' ? 'Upload...' : 'Envoyer' }}
+    </button>
+
+    <button class="action-btn download" (click)="download()">
+      ⬇️ Télécharger
+    </button>
+  </div>
+
+  <div class="upload-message" *ngIf="uploadMessage" [class.success]="uploadStatus==='success'" [class.error]="uploadStatus==='error'">
+    {{ uploadMessage }}
+  </div>
+
+</div>
