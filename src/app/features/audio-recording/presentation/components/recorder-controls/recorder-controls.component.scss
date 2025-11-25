@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-/* TIMER NEON */
+/* TIMER */
 .timer {
   font-size: 3.4rem;
   font-weight: 800;
@@ -21,7 +21,7 @@
   to   { opacity: 1; transform: scale(1.01); }
 }
 
-/* WAVEFORM ANIMÉE */
+/* WAVEFORM */
 .waveform {
   display: flex;
   justify-content: center;
@@ -45,7 +45,7 @@
   to   { transform: scaleY(1.4); opacity: 1; }
 }
 
-/* CIRCLE BUTTONS */
+/* RECORD BUTTONS */
 .controls {
   display: flex;
   justify-content: center;
@@ -82,11 +82,7 @@
 .resume { background: #10b981; }
 .stop   { background: #6b7280; }
 
-/* Halo animé autour du bouton record */
-.mic-pulse {
-  position: relative;
-}
-
+/* Pulse */
 .mic-pulse::after {
   content: '';
   position: absolute;
@@ -102,7 +98,7 @@
   100% { transform: scale(1); opacity: .8; }
 }
 
-/* UPLOAD / DOWNLOAD */
+/* DOWNLOAD / UPLOAD */
 .actions {
   display: flex;
   justify-content: center;
@@ -134,7 +130,7 @@
   }
 }
 
-/* SUCCESS / ERROR MESSAGE */
+/* SUCCESS / ERROR */
 .upload-message {
   margin-top: 1.3rem;
   padding: 0.9rem 1rem;
@@ -153,19 +149,36 @@
   }
 }
 
-@media (max-width: 640px) {
+/* =============================================
+   MOBILE RESPONSIVE
+============================================= */
+@media (max-width: 480px) {
+
   .timer {
-    font-size: 2.6rem;
+    font-size: 2.3rem;
   }
 
   .circle-btn {
-    width: 70px;
-    height: 70px;
-    font-size: 1.8rem;
+    width: 62px;
+    height: 62px;
+    font-size: 1.6rem;
   }
 
-  .action-btn {
-    padding: 0.8rem 1.4rem;
-    font-size: 0.85rem;
+  .controls {
+    gap: 0.7rem;
+  }
+
+  .waveform .bar {
+    width: 4px;
+    height: 22px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.6rem;
+
+    .action-btn {
+      width: 100%;
+    }
   }
 }

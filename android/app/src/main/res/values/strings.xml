@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">audio-recorder-app</string>
+    <string name="title_activity_main">audio-recorder-app</string>
+    <string name="package_name">com.audiorecorder.app</string>
+    <string name="custom_url_scheme">com.audiorecorder.app</string>
+</resources>
